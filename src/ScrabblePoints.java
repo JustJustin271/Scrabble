@@ -1,5 +1,18 @@
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.ArrayList; //This is a new class I imported and I am just as scared as you are
+
+
+/*
+Created: November 7th, 2026
+Last Edited: November 7th, 2026
+Creator: Justin C.
+
+This is a Scrabble Project inspired after playing a game of Scrabble with my friend
+And then following, losing on time lol :)
+
+This is also my first public project using git bash to import this project over!
+ */
+
 
 public class ScrabblePoints {
     public static void main(String[] args) {
@@ -12,6 +25,7 @@ public class ScrabblePoints {
         String eightPoint = "jx";
         String tenPoint = "qz";
         
+        // Creates new dynamic arrays to be able to append to them
         ArrayList<Character> lettersUsed = new ArrayList<>();
         ArrayList<Integer> pointValues = new ArrayList<>();
 
@@ -23,11 +37,12 @@ public class ScrabblePoints {
 
         int total = 0;
 
-        for(int charIndex = 0; charIndex < scrabbleWord.length(); charIndex++) {
+        for(int charIndex = 0; charIndex < scrabbleWord.length(); charIndex++) { //Goes through each character in the given word
             char eachChar = scrabbleWord.charAt(charIndex);
             
             lettersUsed.add(eachChar);
-
+            
+            //Assigns them point values based on the word
             if(onePoint.indexOf(eachChar) != -1) {
                 total += 1;
                 pointValues.add(1);
@@ -53,21 +68,6 @@ public class ScrabblePoints {
             	lettersUsed.remove(lettersUsed.size() - 1);
                 continue;
             }
-
-			/*
-            
-            total += switch (eachChar) {
-	            case 'a', 'e', 'i', 'l', 'n', 'o', 'r', 's', 't', 'u' -> 1;
-	            case 'd', 'g' -> 2;
-	            case 'b', 'c', 'm', 'p' -> 3;
-	            case 'f', 'h', 'v', 'w', 'y' -> 4;
-	            case 'k' -> 5;
-	            case 'j', 'x' -> 8;
-	            case 'q', 'z' -> 10;
-	            default -> 0;
-            };
-            
-            */
 	        
 	    }
         
@@ -76,7 +76,7 @@ public class ScrabblePoints {
         System.out.println("");
         System.out.println("Letters Used:");
         
-        for (int wordIndex = 0; wordIndex < lettersUsed.size(); wordIndex++) {
+        for (int wordIndex = 0; wordIndex < lettersUsed.size(); wordIndex++) { //Prints them out like a receipt at a checkout
         	
         	System.out.print(lettersUsed.get(wordIndex) + ": ");
         	System.out.println(pointValues.get(wordIndex));
